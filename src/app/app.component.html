@@ -1,0 +1,145 @@
+<div class="container">
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Variable</th>
+      <th scope="col">Pipe</th>
+      <th scope="col">Producto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{nombre}}</td>
+      <td>uppercase</td>
+      <td>{{nombre | uppercase}}</td>
+    </tr>
+    <tr>
+      <td>{{nombre}}</td>
+      <td>lowercase</td>
+      <td>{{nombre | lowercase}}</td>
+    </tr>
+    <tr>
+      <td>{{nombre}}</td>
+      <td>slice:3</td>
+      <td>{{nombre | slice:3}}</td>
+    </tr>
+    <tr>
+      <td>{{nombre}}</td>
+      <td>slice:0:3</td>
+      <td>{{nombre | slice:0:3}}</td>
+    </tr>
+    <tr>
+      <td>{{array}}</td>
+      <td>slice:1:7</td>
+      <td>{{array | slice:1:7}}</td>
+    </tr>
+    <tr>
+      <td>{{PI}}</td>
+      <td>number</td>
+      <td>{{PI | number}}</td>
+    </tr>
+    <tr>
+      <td>{{PI}}</td>
+      <td>number:'3.0-0'</td>
+      <td>{{PI | number:'3.0-0'}}</td>
+    </tr>
+    <tr>
+      <td>{{PI}}</td>
+      <td>number:'1.0-2'</td>
+      <td>{{PI | number:'1.0-2'}}</td>
+    </tr>
+    <tr>
+      <td>{{numero}}</td>
+      <td>percent</td>
+      <td>{{numero | percent}}</td>
+    </tr>
+    <tr>
+      <td>{{numero}}</td>
+      <td>percent:'2.2-2'</td>
+      <td>{{numero | percent:'2.2-2'}}</td>
+    </tr>
+    <tr>
+      <td>{{dinero}}</td>
+      <td>currency</td>
+      <td>{{dinero | currency}}</td>
+    </tr>
+    <tr>
+      <td>{{dinero}}</td>
+      <td>currency:'EUR'</td>
+      <td>{{dinero | currency:'EUR'}}</td>
+    </tr>
+    <tr>
+      <td>{{dinero}}</td>
+      <td>currency:'EUR':false</td>
+      <td>{{dinero | currency:'EUR':false}}</td>
+    </tr>
+    <tr>
+      <td>{{dinero}}</td>
+      <td>currency:'EUR':'4.0-0'</td>
+      <td>{{dinero | currency:'EUR':'4.0-0'}}</td>
+    </tr>
+    <tr>
+      <td>{{dinero}}</td>
+      <td>number:'.2-2'</td>
+      <td>{{dinero | number:'.2-2'}}</td>
+    </tr>
+    <tr>
+      <td>{{valorDePromesa}}</td>
+      <td>async</td>
+      <td>{{valorDePromesa | async}}</td>
+    </tr>
+    <tr>
+      <td>{{fecha}}</td>
+      <td>date</td>
+      <td>{{fecha | date}}</td>
+    </tr>
+    <tr>
+      <td>{{fecha}}</td>
+      <td>date:'medium'</td>
+      <td>{{fecha | date:'medium'}}</td>
+    </tr>
+    <tr>
+      <td>{{fecha}}</td>
+      <td>date:'MMMM-dd'</td>
+      <td>{{fecha | date:'MMMM - dd'}}</td>
+    </tr>
+    <tr>
+      <td>{{nombre2}}</td>
+      <td>capitalizado</td>
+      <td>{{nombre2 | capitalizado}}</td>
+    </tr>
+    <tr>
+      <td>{{nombre2}}</td>
+      <td>capitalizado:false</td>
+      <td>{{nombre2 | capitalizado:false}}</td>
+    </tr>
+    <tr>
+      <td>{{nombre}}</td>
+      <td>
+        password:{{activar}}
+        <br>
+        <button (click)="activar = !activar" type="button" class="btn btn-outline-primary">Activar/Desactivar</button>
+      </td>
+      <td>{{nombre | password:activar}}</td>
+    </tr>
+
+  </tbody>
+</table>
+<h4>Slice:3:9</h4>
+<ul>
+  <li *ngFor="let objeto of array | slice:3:9">{{objeto}}</li>
+</ul>
+
+<h4>JSON</h4>
+{{heroe | json}}
+
+<h4>JSON con etiqueta pre</h4>
+<pre>{{heroe | json}}</pre>
+<h4>Youtube <small>video</small></h4>
+<hr>
+<iframe width="854" height="480" [src]="videico | domseguro:'https://www.youtube.com/embed/'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+</div>
